@@ -13,10 +13,21 @@
  * ([10, 20, 30], (acc, item) => acc * item) -> 0 * 10 * 20 * 30 = 0
  * ([10, 20, 30], (acc, item) => acc * item, 1) -> 1 * 10 * 20 * 30 = 6000
  * ([10, 20, 30], (acc, item) => acc - item) -> 0 - 10 - 20 - 30 = -60
- *
- * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc + item)); -> 60
- * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc + item, 10)); -> 70
- * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc * item)); -> 0
- * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc * item, 1)); -> 6000
- * console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc - item)); -> -60
  */
+
+  console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc + item));// -> 60
+  console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc + item, 10)); //-> 70
+  console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc * item)); //-> 0
+  console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc * item, 1));// -> 6000
+  console.log(transformArrayToNumber([10, 20, 30], (acc, item) => acc - item)); //-> -60
+ 
+
+
+ function transformArrayToNumber(arr, func, init){
+
+    if(!init) init = 0;
+
+       return arr.reduce((prevVal, curVal)=>{
+       return func(prevVal, curVal);
+    }, init)
+ }

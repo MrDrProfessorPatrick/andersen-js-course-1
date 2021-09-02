@@ -6,7 +6,7 @@ function A(name) {
   this.name = name;
 }
 
-A.prototype.getName = function() {
+A.prototype.getName = function() { 
   return this.name;
 };
 
@@ -54,4 +54,44 @@ export function task10Old() {
 // Изменить тело функции task10Old, написав task10New, где заиспользуете
 // класс так, как использовалась функция-конструктор B в task10Old
 
-export function task10New() {}
+class NewA {
+  constructor(name){
+    this.name = name;
+  }
+
+  get name(){
+    return this.name;
+  }
+  get color(){
+    return this.color;
+  }
+}
+
+class NewB extends A {
+  constructor(name, age){
+    super(name)
+    this.age = age;
+  }
+
+  getName(){
+    return this.name;
+  }
+
+  getAge(){
+    return this.age;
+  }
+
+  //get name(){}
+}
+
+export function task10New() {
+  let b = new NewB("Max", 12);
+
+  console.log(b.getName('Best')); // Max Best
+  console.log(b.getAge()); // 12
+  console.log(B.defaultUser()); // {name: 'test', age: 0}
+  b.color = 'red';
+  console.log(b.color); // red
+  return b;
+  
+}

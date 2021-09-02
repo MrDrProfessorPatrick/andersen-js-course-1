@@ -28,4 +28,16 @@ export function task6Old() {
 // Напишите реализацию функции task6Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task6New() {}
+export function task6New() {
+  let obj = {
+    name: 'Max',
+    value: 100,
+    role: { name: 'Admin' },
+    cases: [{ id: '1' }],
+  };
+return obj
+//  let {name, value, role, cases} = obj;
+//  return [name,value, role, cases];
+}
+
+console.log(task6new())

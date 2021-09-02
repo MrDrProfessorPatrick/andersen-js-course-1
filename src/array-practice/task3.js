@@ -8,6 +8,18 @@
  * будет вывод элементов массива в обратном порядке в консоль.
  * Одно значение - один вывод (построчно)
  * Возвращаемым из функции значением будет undefined.
- *
- * forEachRight([1, 2, 3, 4], val => console.log(val)); -> в консоль 4 3 2 1
  */
+  forEachRight([1, 2, 3, 4], val => console.log(val)); //-> в консоль 4 3 2 1
+ 
+
+function forEachRight(arr, func){
+
+    let arrReverse = []
+    
+    for( let i = arr.length-1; i>=0; i--){
+        func(arr[i])
+    }
+
+  arrReverse.forEach(el=> {func(el)})
+    
+}

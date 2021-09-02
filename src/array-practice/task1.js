@@ -9,8 +9,17 @@
  * Если колбек-функция не была передана, то из any возвращаем true,
  * если в массиве есть хотя бы один элемент, который дает true,
  * если все значения в массиве дают false, то возвращаем false
- *
- * console.log(any([0, 1, 2, 0], x => x >= 2)); -> true
- * console.log(any([0, 0, 1, 0])); -> true
- * console.log(any([0, 0, 0, 0])); -> false
  */
+
+function any(arr, callback){
+    if(!callback) return true;
+   for(let item of arr){
+       if(callback(item) == true){return true; break;}
+    }
+    return false;
+}
+
+console.log(any([0, 1, 2, 0], x => x >= 2)); //-> true
+console.log(any([0, 0, 1, 0])); //-> true
+console.log(any([0, 0, 0, 0])); //-> false
+console.log(any([0, 0, 0, 0], x => x != 0)); //-> true
