@@ -6,12 +6,20 @@
  * следующие вызовы метода .next() должны возвращать строку 'Complete!'
  *
  * В решении функции-генераторы (function*) не использовать.
- *
- * const generator = createGenerator([1, '6', 3, 2]);
- * generator.next(); -> 1
- * generator.next(); -> '6'
- * generator.next(); -> 3
- * generator.next(); -> 2
- * generator.next(); -> 'Complete!'
- * generator.next(); -> 'Complete!'
  */
+const generator = createGenerator([1, '6', 3, 2]);
+console.log(generator.next()); // -> 1
+generator.next(); //-> '6'
+generator.next(); //-> 3
+generator.next(); //-> 2
+generator.next(); //-> 'Complete!'
+generator.next(); //-> 'Complete!'
+
+function createGenerator(arr) {
+  let index = 0;
+  return{
+    next: function() {
+      return index < arr.length ? arr[index++] : 'Complete!';
+    }
+ }
+}
