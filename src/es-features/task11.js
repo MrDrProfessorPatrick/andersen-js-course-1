@@ -19,5 +19,7 @@ export function task11Old(obj, fieldName) {
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
 export function task11New(obj, fieldName) {
-   return obj[fieldName] ?? false; 
+  return obj[fieldName] ?? false;
 }
+
+console.log(task11New({a: 0}, 'a'));

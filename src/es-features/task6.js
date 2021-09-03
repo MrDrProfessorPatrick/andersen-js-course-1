@@ -35,9 +35,9 @@ export function task6New() {
     role: { name: 'Admin' },
     cases: [{ id: '1' }],
   };
-return obj
-//  let {name, value, role, cases} = obj;
-//  return [name,value, role, cases];
+  return obj;
+  //  let {name, value, role, cases} = obj;
+  //  return [name,value, role, cases];
 }
 
-console.log(task6new())
+console.log(task6new());

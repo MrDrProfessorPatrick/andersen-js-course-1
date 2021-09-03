@@ -8,11 +8,9 @@
  * так как их было всего 3 -> [1, 2, 3]
  * ([1, 2, 3], 2) -> берем первых 2 элемента. Вернули массив [1, 2]
  */
-  console.log(take([1, 2, 3, 4, 5, 6], 5)); //-> [1, 2, 3]
-  console.log(take([1, 2, 3], 2)); //-> [1, 2]
- 
+console.log(take([1, 2, 3, 4, 5, 6], 3)); //-> [1, 2, 3]
+console.log(take([1, 2, 3], 2)); //-> [1, 2]
 
-function take(arr, pos){
-    let res = arr.slice(0, pos)
-    return res
-}
+function take(arr, pos) {
+  return arr.slice(0, pos);
+ }

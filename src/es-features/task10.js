@@ -6,7 +6,7 @@ function A(name) {
   this.name = name;
 }
 
-A.prototype.getName = function() { 
+A.prototype.getName = function() {
   return this.name;
 };
 
@@ -39,7 +39,7 @@ Object.defineProperty(B.prototype, 'color', {
   },
 });
 
-export function task10Old() {
+function task10Old() {
   var b = new B('Max', 12);
   console.log(b.getName('Best')); // Max Best
   console.log(b.getAge()); // 12
@@ -55,37 +55,37 @@ export function task10Old() {
 // класс так, как использовалась функция-конструктор B в task10Old
 
 class NewA {
-  constructor(name){
+  constructor(name) {
     this.name = name;
   }
 
-  get name(){
+  get name() {
     return this.name;
   }
-  get color(){
+  get color() {
     return this.color;
   }
 }
 
 class NewB extends A {
-  constructor(name, age){
-    super(name)
+  constructor(name, age) {
+    super(name);
     this.age = age;
   }
 
-  getName(){
+  getName() {
     return this.name;
   }
 
-  getAge(){
+  getAge() {
     return this.age;
   }
 
   //get name(){}
 }
 
-export function task10New() {
-  let b = new NewB("Max", 12);
+function task10New() {
+  let b = new NewB('Max', 12);
 
   console.log(b.getName('Best')); // Max Best
   console.log(b.getAge()); // 12
@@ -93,5 +93,6 @@ export function task10New() {
   b.color = 'red';
   console.log(b.color); // red
   return b;
-  
 }
+
+console.log(task10New())
