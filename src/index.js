@@ -1,2 +1,2 @@
 
-import './asynhronous-programming/task1'
+import './asynhronous-programming/task2'
